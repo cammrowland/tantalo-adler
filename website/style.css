@@ -572,9 +572,9 @@ body.gate-active { visibility: hidden; }
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow-card);
-  padding: var(--sp-8);
+  overflow: hidden;
   display: flex;
-  gap: var(--sp-6);
+  flex-direction: column;
   transition: box-shadow var(--dur-micro) var(--ease-standard),
               border-color var(--dur-micro) var(--ease-standard),
               transform var(--dur-micro) var(--ease-standard);
@@ -587,18 +587,18 @@ body.gate-active { visibility: hidden; }
 }
 
 .attorney-portrait {
-  flex: none;
-  width: 100px;
-  height: 100px;
-  border-radius: var(--radius);
-  overflow: hidden;
-  border: 1px solid var(--border);
+  width: 100%;
+  aspect-ratio: 1 / 1;
 }
 
 .attorney-portrait img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.attorney-body {
+  padding: var(--sp-8);
 }
 
 .attorney-body h3 {
@@ -637,6 +637,12 @@ body.gate-active { visibility: hidden; }
 .attorney-contact a:focus-visible {
   outline: 2px solid var(--taupe);
   outline-offset: 2px;
+}
+
+.attorney-links {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-6);
 }
 
 /* ============================================
@@ -867,12 +873,19 @@ body.gate-active { visibility: hidden; }
 
 .bio-portrait {
   flex: none;
-  width: 140px;
-  height: 140px;
+  width: 220px;
+  height: 220px;
   border-radius: var(--radius);
   overflow: hidden;
   border: 1px solid var(--border);
   box-shadow: var(--shadow-card);
+}
+
+@media (max-width: 480px) {
+  .bio-portrait {
+    width: 160px;
+    height: 160px;
+  }
 }
 
 .bio-portrait img {
@@ -932,6 +945,10 @@ body.gate-active { visibility: hidden; }
   border-radius: var(--radius);
   box-shadow: var(--shadow-card);
   padding: var(--sp-8);
+  /* Pulls the box up by its own top padding + border so the first label
+     lines up with the narrative column's first line, instead of sitting
+     visibly lower due to the card's internal padding. */
+  margin-top: calc(-1px - var(--sp-8));
 }
 
 .credential-rail dt {
