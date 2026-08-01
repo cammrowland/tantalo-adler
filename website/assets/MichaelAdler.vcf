@@ -1,0 +1,15 @@
+BEGIN:VCARD
+VERSION:2.1
+N:Adler;Michael;S.
+FN:Michael S. Adler
+ORG:Tantalo & Adler LLP
+TITLE:Partner
+TEL;WORK;VOICE:(310) 734-8694
+TEL;WORK;FAX:(310) 734-8696
+ADR;WORK:;;1801 Century Park East, Suite 2400;Los Angeles; CA;90067;United States of America
+LABEL;WORK;ENCODING=QUOTED-PRINTABLE:1901 Avenue of the Stars, Suite 1000=0D=0ALos Angeles, CA 90067=0D=0AUnited=
+ States of America
+URL;WORK:http://www.ta-llp.com
+EMAIL;PREF;INTERNET:madler@ta-llp.com
+REV:20061012T192835Z
+END:VCARD
